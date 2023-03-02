@@ -1,0 +1,29 @@
+/// Crea una función EsMultiplo que reciba los dos números pasados por el usuario, validando
+/// que el primer número múltiplo del segundo y devuelva verdadero si el primer número es
+/// múltiplo del segundo, sino es múltiplo que devuelva falso.
+
+Funcion EsMultiplo(num1,num2)
+		Si (num1 MOD num2 = 0) Entonces
+			Leer true;
+		SiNo
+			Leer False;
+		FinSi
+FinFuncion
+
+Algoritmo es_multiplo_ej3
+	
+	Definir num1, num2 Como Real
+	Definir multiplo, r Como Logico
+	
+	Escribir "Ingrese el primer número: ";
+	Leer num1;
+	
+	Escribir "Ingrese el segundo número: ";
+	Leer num2;
+	
+	multiplo = num1 MOD num2 == 0;
+	r=multiplo;
+	
+	Escribir "El primer número es múltiplo del segundo: ",r;
+	
+FinAlgoritmo
