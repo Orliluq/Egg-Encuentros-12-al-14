@@ -1,0 +1,66 @@
+/// Realizar una función que reciba un numero ingresado por el usuario y averigüe si el número
+/// tiene todos sus dígitos impares (ejemplo: 333, 55, etc.). Para esto vamos a tener que separar el
+/// numero en partes (si es un numero de más de un digito) y ver si cada número es par o impar.
+/// Nota: recordar el uso de la función Mod y Trunc(). No podemos pasar el numero a cadena para
+/// realizar el ejercicio.
+
+Funcion calcular(num) 
+	Definir num1, num2, num3 Como Entero
+	
+	num3 = num % 10 
+	num2 = trunc(num / 10) % 10
+	num1 = trunc(trunc(num / 10) / 10)
+	
+	Si num % 1000 == num Y num >= 100 Entonces
+		Escribir "Es mayor a 3 cifras.";
+		Si num1 MOD(2) == 0 Entonces
+			Escribir num1, " Es par.";
+		SiNo
+			Escribir num1, " Es Impar.";
+		FinSi
+		
+		Si num2 MOD(2) == 0 Entonces
+			Escribir num2, " Es par.";
+		SiNo
+			Escribir num2, " Es impar."; 
+		FinSi
+		
+		Si num3 MOD(2) == 0 Entonces
+			Escribir num3, " Es par.";
+		SiNo
+			Escribir num3, " Es impar."; 
+		FinSi
+	FinSi
+	
+	Si num % 100 == num Y num >=10 Y num <= 99 Entonces
+		Escribir "Es de 2 cifras.";
+		
+		Si num2 MOD(2) == 0 Entonces
+			Escribir num2, " Es par.";
+		SiNo
+			Escribir num2, " Es impar.";
+		FinSi
+		
+		Si num3 MOD(2) == 0 Entonces
+			Escribir num3, " Es par.";
+		SiNo
+			Escribir num3, " Es impar.";
+		FinSi
+	FinSi
+	
+	Si num % 10 == num Y num <= 10 Entonces
+		Escribir "Es de una cifra.";
+		Si num3 MOD(2) == 0 Entonces
+			Escribir num3, " Es par.";
+		SiNo
+			Escribir num3, " Es impar.";
+		FinSi
+	FinSi
+FinFuncion
+
+Algoritmo digitos_impares
+	Definir num Como Entero
+	Escribir "Ingrese una número menor o igual a 3 digitos:";
+	Leer num;
+	calcular(num);
+FinAlgoritmo
