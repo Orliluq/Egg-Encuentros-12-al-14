@@ -1,0 +1,41 @@
+/// La sucesión de Fibonacci se puede formalizar de acuerdo a la siguiente fórmula:
+/// Fibonacci (n) = Fibonacci (n-1) + Fibonacci (n-2) para todo n > 1
+/// Fibonacci (n) = 1 para todo n <= 1
+/// Por lo tanto, si queremos calcular el término "n" debemos escribir una función que reciba
+/// como argumento el valor de "n" y que calcule la serie hasta llegar a ese valor.
+/// Para conocer más acerca de la serie de Fibonacci consultar el siguiente link:
+/// https://quantdare.com/numeros-de-fibonacci/
+
+
+Algoritmo fibonacci_ej12
+    
+	Definir numFibonacci Como Real
+    
+	Escribir "Ingrese un número: ";
+	Leer numFibonacci;
+    
+	fibonacci(numFibonacci);
+	
+	
+FinAlgoritmo
+
+Funcion fibonacci(num)
+    
+	Definir n1, n2, n3, i Como Real
+    
+	n1 = 0;
+    n2 = 1;
+    n3 = 1;
+    
+    Para i = 0 Hasta num Hacer
+        Si (i >= 1) Entonces
+            Escribir n3, " + ", n1, " = ", n3 + n1;
+            n2 = n1;
+            n1 = n1 + n3;
+            n3 = n2;
+        SiNo
+            Escribir n1, " + ", n2, " = ", n1 + n2;
+            n1 = n1 + n2;
+        FinSi
+    FinPara
+FinFuncion
