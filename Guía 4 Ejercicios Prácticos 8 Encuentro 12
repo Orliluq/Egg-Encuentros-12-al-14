@@ -1,0 +1,61 @@
+/// Crear una función llamada "Login", que recibe un nombre de usuario y una contraseña y que
+/// devuelve Verdadero si el nombre de usuario es "usuario1" y si la contraseña es "asdasd".
+/// Además, la función calculara el número de intentos que se ha usado para loguearse, tenemos
+/// solo 3 intentos, si nos quedamos sin intentos la función devolverá Falso.
+
+Funcion retorno = Login (usuario Por Referencia, password Por Referencia)
+	Definir retorno Como Logico
+	Definir contador Como Entero
+	
+	contador = 0
+	usuario = "usuario1"
+	password = "asdasd"
+	
+	Mientras contador < 3 Hacer
+		Si (usuario == usuario Y password == password) Entonces						
+			contador <- contador + 3
+			
+			retorno <- usuario == usuario Y password == password
+			
+		SiNo
+			Si (usuario <> usuario Y password <> password) Entonces
+				Escribir "Usuario y contraseña incorrectos, intente de nuevo:"
+				Leer usuario, password
+				contador <- contador + 1
+				
+				retorno <- usuario == usuario Y password == password
+			SiNo
+				Si (usuario <> usuario) Entonces
+					Escribir "Usuario incorrecto, intente de nuevo:"
+					Leer usuario
+					contador <- contador + 1
+					
+					retorno <- usuario == usuario Y password == password
+				SiNo
+					Si (password <> password) Entonces
+						Escribir "Contraseña incorrecta, intente de nuevo:"
+						Leer password
+						contador <- contador + 1
+						
+						retorno <- usuario == usuario Y password == password
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	Fin Mientras
+	
+FinFuncion
+
+Algoritmo Ejercicio_8
+	Definir usuario, password Como Caracter
+	Definir resultado Como Logico
+	
+	Escribir "Ingrese el usuario:"
+	Leer usuario
+	Escribir "Ingrese contraseña:"
+	Leer password
+	
+	resultado = Login(usuario, password)
+	
+	Escribir resultado
+FinAlgoritmo
